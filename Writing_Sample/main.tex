@@ -1,0 +1,365 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{booktabs, threeparttable, makecell}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\title{Writing Sample}
+\author{Sitong Li}
+\date{August 2025}
+
+\begin{document}
+
+\maketitle
+
+The central question of this report is: Does a campaign visit by a candidate affect the amount of newspaper coverage the candidate receives?
+To address this, the report is organized into three sections. Section 1 presents the data transformation process and descriptive statistics. Section 2 outlines the main empirical results. Section 3 provides additional robustness checks for the findings.
+
+
+\section{Data description and descriptive statistics}
+
+First, I transformed the dataset by excluding all non--major party candidates. 
+Second, I reshaped the dataset into long format so that each record corresponds to a single date and a single county. 
+I then constructed three new variables at the county--day level (both state--county identifiers and visit indicators): 
+\begin{itemize}
+    \item \texttt{visit\_ticket} $= 1$ if either the presidential or vice-presidential candidate visited the county on that date.
+    \item \texttt{counts\_ticket} $=$ \texttt{counts\_Pres} $+$ \texttt{counts\_VP} (total mentions in local newspapers).
+    \item \texttt{hcounts\_ticket} $=$ \texttt{hcounts\_Pres} $+$ \texttt{hcounts\_VP} (headline mentions).
+\end{itemize}
+Both candidate-level and ticket-level datasets were retained. 
+The ticket-level dataset serves as the primary sample, while the candidate-level dataset is used for robustness and heterogeneity checks. 
+After constructing these variables, I computed basic descriptive statistics (Table~\ref{tab:desc_stats}).
+
+\begin{table}[htbp]
+\centering
+\caption{Average counts/hcounts on visit vs.\ non-visit days}
+\label{tab:desc_stats}
+\begin{tabular}{lrr}
+\toprule
+\textbf{visit\_ticket} & \textbf{counts\_ticket} & \textbf{hcounts\_ticket} \\
+\midrule
+No Visit & 3.96 & 0.78 \\
+Visit    & 7.58 & 1.93 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The dataset covers 22 unique states, which matches the task's data description. 
+It contains all counties within those states and 366 unique days.
+From the descriptive statistics, we observe that average mentions (\texttt{counts\_ticket} and \texttt{hcounts\_ticket}) are higher on visit days compared to non-visit days.
+
+The share of county-days with any visit is approximately 0.13\%, indicating that visits are relatively rare but tend to coincide with a higher level of newspaper coverage.
+
+The following figures illustrate the main patterns in the data. 
+Figure~\ref{fig:visit_mentions} shows that visits are associated with higher levels of media mentions. 
+Figure~\ref{fig:whitehouse_effect} suggests that the party's occupancy of the White House has some influence on coverage intensity. 
+Figure~\ref{fig:event_study_pattern1},
+Figure~\ref{fig:event_study_pattern3} ,Figure~\ref{fig:event_study_pattern5} ,Figure~\ref{fig:event_study_pattern7} reveals that media mentions tend to rise both immediately before and after a visit, which indicates that an event study framework may be appropriate to more formally examine these dynamic effects.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plot/bar_mean.png}
+    \caption{Average media mentions by visit status.}
+    \label{fig:visit_mentions}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plot/bar_party.png}
+    \caption{Coverage intensity by party occupancy of the White House.}
+    \label{fig:whitehouse_effect}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plot/window_1.png}
+    \caption{Media mentions before and after visits (event study motivation).}
+    \label{fig:event_study_pattern1}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plot/window_3.png}
+    \caption{Media mentions before and after visits (event study motivation).}
+    \label{fig:event_study_pattern3}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plot/window_5.png}
+    \caption{Media mentions before and after visits (event study motivation).}
+    \label{fig:event_study_pattern5}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plot/window_7.png}
+    \caption{Media mentions before and after visits (event study motivation).}
+    \label{fig:event_study_pattern7}
+\end{figure}
+
+
+\section{Main Regression}
+
+\subsection*{Baseline Analysis: Effect of Campaign Visits on Newspaper Coverage}
+
+To address the question \emph{``Does a campaign visit by a candidate affect the amount of newspaper coverage the candidate receives?''}, we estimate a baseline two-way fixed effects model at the \textbf{ticket level}:
+\begin{equation}
+\log\big(1+\text{Coverage}_{c,t}^{\text{ticket}}\big) 
+\;=\; \alpha_c \;+\; \theta_t \;+\; \beta \cdot \text{Visit}_{c,t}^{\text{ticket}} \;+\; \varepsilon_{c,t}
+\label{eq:baseline}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\alpha_c$ are \textbf{county fixed effects} to account for persistent, time-invariant differences in media intensity across counties.
+    \item $\theta_t$ are \textbf{date fixed effects} to absorb nationwide news shocks and day-of-week patterns.
+    \item Standard errors are clustered either \textbf{one-way at the county level} or \textbf{two-way at county and date} to account for correlated errors within these dimensions.
+    \item The dependent variable is the log-transformed count of candidate mentions plus one, $\log(1+\text{Coverage})$, allowing for interpretation of $\beta$ as a \textbf{semi-elasticity} --- the approximate percentage change in coverage associated with a visit.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{Baseline estimates: Effect of campaign visits on local newspaper coverage}
+\label{tab:baseline}
+\renewcommand\cellalign{t}
+\begin{threeparttable}
+\begin{tabular}{lcc}
+\toprule
+ & \multicolumn{2}{c}{log\_counts} \\
+\cmidrule(lr){2-3} 
+ & (1) & (2) \\
+\midrule
+\addlinespace
+visit\_ticket & \makecell{0.1312* \\ (0.0523)} & \makecell{0.1312* \\ (0.0512)} \\
+\midrule
+\addlinespace
+date & x & x \\
+countycode & x & x \\
+\midrule
+\addlinespace
+Observations & 66,612 & 66,612 \\
+S.E. type & by: countycode & by: countycode+date \\
+$R^2$ & 0.7046 & 0.7046 \\
+$R^2$ Within & 0.0001 & 0.0001 \\
+\bottomrule
+\end{tabular}
+\footnotesize Significance levels: $*$ p $<$ 0.05, $**$ p $<$ 0.01, $***$ p $<$ 0.001. Format of coefficient cell: Coefficient (Std.\ Error).
+\end{threeparttable}
+\end{table}
+
+The result is presented in Table~\ref{tab:baseline}.
+The estimated coefficient on \textbf{Visit Ticket} ($\beta \approx 0.1312$) implies that, on average, a campaign visit is associated with roughly a \textbf{13\% increase} in local newspaper coverage for that ticket on the day of the visit, relative to non-visit days, holding county-specific media levels and nationwide news shocks constant. This effect is statistically significant at the 5\% level under both one-way and two-way clustered standard errors.
+
+The within-$R^2$ is small, reflecting that visits explain a limited fraction of within-county daily variation in coverage --- expected given the many other factors influencing news content. Nonetheless, the positive and statistically significant coefficient suggests that campaign visits do have a measurable impact on local press attention.
+
+\subsection*{Count Model (PPML): Effect of Campaign Visits on Newspaper Coverage}
+
+To complement the OLS-log specification, we estimate a Poisson pseudo--maximum likelihood (PPML) model at the ticket level:
+\begin{equation}
+\mathbb{E}[\text{Coverage}_{c,t}^{\text{ticket}} \mid \cdot] 
+= \exp\{\alpha_c + \theta_t + \beta \cdot \text{Visit}_{c,t}^{\text{ticket}}\}
+\label{eq:ppml}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\alpha_c$ are \textbf{county fixed effects} to absorb persistent differences in media coverage across counties.
+    \item $\theta_t$ are \textbf{date fixed effects} to control for national shocks and day-of-week patterns.
+    \item Standard errors are clustered at the county level to allow for arbitrary within-county correlation over time.
+\end{itemize}
+
+This approach has two key advantages over the log-linear model. 
+First, PPML naturally handles zero coverage days without requiring a $\log(1+y)$ transformation, which can introduce bias or interpretability issues when the outcome has a large mass at zero. 
+Second, PPML yields consistent estimates under heteroskedasticity, making it well-suited for count outcomes like media mentions. 
+This is particularly important here because campaign visit days are relatively rare, and the log $+$ 1 transformation in OLS may introduce additional uncertainty in such sparse data settings.
+
+\begin{table}[htbp]
+\centering
+\caption{PPML estimates: Effect of campaign visits on local newspaper coverage}
+\label{tab:ppml}
+\renewcommand\cellalign{t}
+\begin{threeparttable}
+\begin{tabular}{lc}
+\toprule
+ & \multicolumn{1}{c}{counts\_ticket (PPML)} \\
+\cmidrule(lr){2-2}
+ & (1) \\
+\midrule
+\addlinespace
+visit\_ticket & \makecell{-0.0392 \\ (0.0640)} \\
+\midrule
+\addlinespace
+date & x \\
+countycode & x \\
+\midrule
+\addlinespace
+Observations & 66{,}612 \\
+S.E. type & by: countycode \\
+Log-Likelihood & -124{,}860 \\
+Pseudo $R^2$ (CS) & 0.9990 \\
+\bottomrule
+\end{tabular}
+\footnotesize Significance levels: $*$ p $<$ 0.05, $**$ p $<$ 0.01, $***$ p $<$ 0.001. Format of coefficient cell: Coefficient \\ (Std.\ Error). Poisson family with log link; county and date fixed effects; standard errors clustered by county.
+\end{threeparttable}
+\end{table}
+
+The result is presented in Table \ref{tab:ppml}. 
+Unlike the OLS-log model, which found a positive and statistically significant effect of visits ($\approx$13\% increase in coverage), the PPML estimate for \textbf{Visit Ticket} is negative ($-0.0392$) and statistically insignificant. 
+This point estimate suggests that, after controlling for county- and date-specific factors, visit days are associated with roughly a \textbf{3.9\% lower} expected coverage, though the confidence interval easily includes zero.
+
+The divergence between the log-linear and PPML results may stem from differences in how each model handles zeros, skewness, and outliers. 
+Given that visit days are rare and the outcome distribution is highly skewed, the PPML model’s robustness to zeros is an important complement to the OLS findings. 
+However, the lack of significance here means we cannot reject the null hypothesis of no effect under the count model specification.
+
+\subsection*{Event Study: Dynamic Effects of Campaign Visits on Newspaper Coverage}
+
+To explore the \textbf{timing and persistence} of visit effects, we estimate an event study specification at the ticket level:
+\begin{equation}
+\log\big(1+\text{Coverage}_{c,t}\big) 
+= \alpha_c + \theta_t + \sum_{\tau \neq -1} \beta_\tau D_{\tau,c,t} + \varepsilon_{c,t}
+\label{eq:eventstudy}
+\end{equation}
+where:
+\begin{itemize}
+    \item $D_{\tau}$ is an indicator for day $\tau$ relative to a visit, with $\tau = -1$ (the day before the visit) omitted as the baseline.
+    \item $\alpha_c$ are county fixed effects, absorbing time-invariant differences in media intensity.
+    \item $\theta_t$ are date fixed effects, controlling for nationwide news shocks and seasonal patterns.
+    \item Leads ($\tau < 0$) test for \textbf{pre-trends}, while lags ($\tau > 0$) capture \textbf{post-visit persistence}.
+    \item The event window is reset at each visit, avoiding overlap where possible.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{Event study estimates: Dynamic effects of campaign visits on local newspaper coverage}
+\label{tab:eventstudy}
+\renewcommand\cellalign{t}
+\begin{threeparttable}
+\begin{tabular}{lc}
+\toprule
+ & log\_counts \\
+ & (1) \\
+\midrule
+\addlinespace
+D\_\_7 & \makecell{0.0054 \\ (0.1067)} \\
+D\_\_6 & \makecell{0.0969 \\ (0.1067)} \\
+D\_\_5 & \makecell{0.0564 \\ (0.1064)} \\
+D\_\_4 & \makecell{-0.0058 \\ (0.1048)} \\
+D\_\_3 & \makecell{0.0837 \\ (0.1092)} \\
+D\_\_2 & \makecell{0.1620 \\ (0.1029)} \\
+D\_0   & \makecell{0.2046* \\ (0.0944)} \\
+D\_1   & \makecell{0.0637 \\ (0.1174)} \\
+D\_2   & \makecell{0.0987 \\ (0.1016)} \\
+D\_3   & \makecell{0.0627 \\ (0.1064)} \\
+D\_4   & \makecell{-0.0219 \\ (0.1037)} \\
+D\_5   & \makecell{0.0388 \\ (0.1080)} \\
+D\_6   & \makecell{0.0710 \\ (0.1110)} \\
+D\_7   & \makecell{-0.1130 \\ (0.1012)} \\
+\midrule
+\addlinespace
+date & x \\
+countycode & x \\
+\midrule
+\addlinespace
+Observations & 1{,}105 \\
+S.E. type & hetero \\
+$R^2$ & 0.8169 \\
+$R^2$ Within & 0.0182 \\
+\bottomrule
+\end{tabular}
+\footnotesize Significance levels: $*$ p $<$ 0.05, $**$ p $<$ 0.01, $***$ p $<$ 0.001. Format of coefficient cell: Coefficient (Std.\ Error).
+\end{threeparttable}
+\end{table}
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{plot/res_plot.png} 
+    \caption{Event study plot: dynamic effects of campaign visits on local newspaper coverage. 
+    The dashed vertical line at $\tau = 0$ marks the day of the visit. 
+    Coefficients are from Equation~\eqref{eq:eventstudy}, with 95\% confidence intervals.}
+    \label{fig:eventstudyplot}
+\end{figure}
+
+The result is shown in Table \ref{tab:eventstudy}
+The event study results show no statistically significant changes in coverage during the week before the visit, with all pre-visit coefficients close to zero, supporting the parallel trends assumption for causal interpretation. On the day of the visit ($\tau = 0$), coverage rises by about 20\% relative to the day before, significant at the 5\% level, indicating a notable media boost tied directly to the event. This effect quickly dissipates: coefficients for days after the visit are small, statistically insignificant, and fluctuate around zero, suggesting that the increase in local newspaper attention is short-lived and concentrated on the visit day.
+
+Overall, the results indicate that campaign visits generate a measurable but temporary spike in coverage, without evidence of anticipatory reporting in the preceding week.
+
+
+
+
+
+\section{Robustness Checks}
+
+To assess the robustness of the main regression results, I conduct two additional tests. 
+
+\paragraph{Headline Coverage as Dependent Variable.} 
+In Table \ref{tab:headline}, I replace the dependent variable (total mentions) with headline coverage. The lack of statistical significance suggests that visits do not robustly increase headline coverage in the same way they increase total mentions. This could imply that while visits may trigger more overall press coverage, they do not consistently result in high-visibility placement in headlines. Alternatively, the smaller and noisier effect could reflect the relative rarity of headline coverage, making it harder to detect significant changes with the same sample size.
+
+\begin{table}[H]
+\centering
+\renewcommand\cellalign{t}
+\begin{threeparttable}
+\begin{tabular}{lcc}
+\toprule
+ & log\_hcounts \\
+ & (1) \\
+\midrule
+\addlinespace
+visit\_ticket & \makecell{0.059 \\ (0.057)} \\
+\midrule
+\addlinespace
+date\_str & x \\
+countycode & x \\
+\midrule
+\addlinespace
+Observations & 66,612 \\
+S.E. type & hetero \\
+$R^2$ & 0.482 \\
+$R^2$ Within & 0.000 \\
+\bottomrule
+\end{tabular}
+\footnotesize Significance levels: $*$ p $<$ 0.05, $**$ p $<$ 0.01, $***$ p $<$ 0.001. Format of coefficient cell: Coefficient (Std. Error).
+\end{threeparttable}
+\caption{Headline coverage as dependent variable}
+\label{tab:headline}
+\end{table}
+
+\paragraph{Opponent and Spillover Effects.} 
+In the second robustness check, I estimate regressions including both own-ticket and opponent-ticket visit indicators, with county and date fixed effects, for each party.Two results in preset in Table \ref{tab:opp_dem} and \ref{tab:opp_gop}. When the GOP ticket visits, GOP coverage in local newspapers is estimated to increase by about 6.3\% (given the $\log(1+y)$ specification, the approximate percent change is $100 \times$ coefficient), but the effect is not statistically significant at conventional levels. When the Democratic ticket visits, GOP coverage is estimated to increase by about 9.3\%, also not significant. 
+
+For Democratic coverage, a DEM ticket visit raises local coverage by about 22.5\%, significant at the 1\% level. In contrast, a GOP ticket visit is associated with a 10.1\% drop in Democratic coverage, but this effect is not statistically significant.
+
+Overall, the own-visit effects show that Democratic candidates receive a strong, statistically significant boost in local coverage from same-day visits, whereas GOP candidates do not. For opponent-visit effects, neither party experiences a statistically significant change in coverage when the opposing ticket visits, although the Democratic model shows a modest, non-significant negative coefficient and the GOP model a modest positive one.
+
+
+\begin{table}[H]
+\centering
+\input{3.2(gop).tex}
+\caption{Opponent and spillover effects: GOP coverage model}
+\label{tab:opp_gop}
+\end{table}
+
+\begin{table}[H]
+\centering
+\input{3.2(dem).tex}
+\caption{Opponent and spillover effects: DEM coverage model}
+\label{tab:opp_dem}
+\end{table}
+
+\section{Conclusion}
+
+This report finds that campaign visits by presidential or vice-presidential candidates do increase local newspaper coverage, but the effect is modest, short-lived, and model-dependent. Using a baseline two-way fixed effects model, a visit is associated with a statistically significant 13\% increase in same-day coverage. However, this effect becomes statistically insignificant when estimated using a more conservative Poisson count model that better accounts for zero-inflated and skewed data.
+
+An event study further shows that the increase in coverage is concentrated on the day of the visit, with no evidence of anticipatory or sustained media effects in the surrounding days. Robustness checks suggest that while overall mentions rise, headline coverage does not consistently increase, and Democratic tickets appear to benefit more than Republican ones.
+
+Overall, the evidence supports the conclusion that campaign visits generate a temporary, measurable spike in local press coverage, but this effect fades quickly and varies across parties and model specifications.
+
+\end{document}
+
+
+
