@@ -1,0 +1,249 @@
+% ============================================================
+%  Paper Reading & Review Template
+%  Based on rigorous economics/accounting research review framework
+% ============================================================
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{soul}  % for \hl highlighting
+
+% Colors
+\definecolor{verdict}{RGB}{180,0,0}
+\definecolor{sectionblue}{RGB}{0,60,120}
+\definecolor{notegreen}{RGB}{0,100,50}
+\definecolor{warningorange}{RGB}{200,80,0}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{sectionblue}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{sectionblue}}{}{0em}{}
+
+% Verdict box
+\newmdenv[
+  linecolor=verdict,
+  linewidth=1.5pt,
+  frametitle={\color{verdict}\bfseries Bottom-Line Verdict},
+  frametitleaboveskip=4pt,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+]{verdictbox}
+
+% Note box (for personal annotations)
+\newmdenv[
+  linecolor=notegreen,
+  linewidth=1pt,
+  frametitle={\color{notegreen}\bfseries Personal Note},
+  frametitleaboveskip=4pt,
+  backgroundcolor=green!5,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+]{notebox}
+
+% ============================================================
+\begin{document}
+
+% ---- Header ------------------------------------------------
+\begin{center}
+  {\LARGE\bfseries Paper Reading Notes}\\[6pt]
+  {\large\color{sectionblue} Economics / Accounting Research Review}\\[10pt]
+  \begin{tabular}{ll}
+    \textbf{Paper Title:}   & \underline{\hspace{10cm}} \\[4pt]
+    \textbf{Authors:}       & \underline{\hspace{10cm}} \\[4pt]
+    \textbf{Journal/Venue:} & \underline{\hspace{10cm}} \\[4pt]
+    \textbf{Year:}          & \underline{\hspace{3cm}} \\[4pt]
+    \textbf{Date Read:}     & \underline{\hspace{3cm}} \\[4pt]
+    \textbf{Read by:}       & \underline{\hspace{6cm}} \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.5em}
+\hrule
+\vspace{1em}
+
+% ---- A. Overall Verdict ------------------------------------
+\section*{A. Overall Verdict}
+
+\begin{verdictbox}
+% Write one paragraph: what is the paper doing, does it actually work,
+% and what is your overall impression?
+\vspace{3cm}
+\end{verdictbox}
+
+\vspace{0.5em}
+\textbf{Bottom-line judgment} (circle one):\quad
+\textbf{Promising} \quad / \quad
+\textbf{Salvageable but weak} \quad / \quad
+\textbf{Seriously flawed} \quad / \quad
+\textbf{Not convincing}
+
+% ============================================================
+\section{1. Big-Picture Contribution}
+
+\subsection{Main Research Question}
+% What is the paper actually trying to answer?
+\vspace{2.5cm}
+
+\subsection{Claimed Contribution}
+% What does the paper say it contributes?
+\vspace{2.5cm}
+
+\subsection{Is the Contribution Real?}
+% Is it genuinely new, or incremental / repackaged? Does it miss key literature?
+% Is the paper unnecessarily long, repetitive, or poorly focused?
+\vspace{3cm}
+
+% ============================================================
+\section{2. Motivation}
+
+\subsection{Is the Motivating Fact Convincing?}
+% Could it be driven by measurement error or sample construction?
+\vspace{2.5cm}
+
+\subsection{Is the Question Important?}
+% Does the paper explain why it matters for a broader econ/accounting question?
+% Is the question genuinely first-order or does it feel second-order?
+\vspace{2.5cm}
+
+\subsection{Does Motivation Lead Naturally to the Design?}
+\vspace{2cm}
+
+% ============================================================
+\section{3. Empirical Analysis}
+
+\subsection{Data}
+\begin{itemize}[leftmargin=*, nosep]
+  \item \textbf{Sample appropriateness / representativeness:}
+  \vspace{1.5cm}
+  \item \textbf{Obvious selection problems:}
+  \vspace{1.5cm}
+  \item \textbf{Outliers / time-period / subsample concerns:}
+  \vspace{1.5cm}
+  \item \textbf{Variable construction, scaling, cleaning choices:}
+  \vspace{1.5cm}
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}[leftmargin=*, nosep]
+  \item \textbf{Is the empirical strategy appropriate?}
+  \vspace{1.5cm}
+  \item \textbf{Is there a simpler way to answer the question?}
+  \vspace{1.5cm}
+  \item \textbf{Controls: reasonable or excessive?}
+  \vspace{1.5cm}
+  \item \textbf{Standard errors, fixed effects, timing, transformations:}
+  \vspace{1.5cm}
+\end{itemize}
+
+\subsection{Identification}
+\begin{itemize}[leftmargin=*, nosep]
+  \item \textbf{Causal assumptions required:}
+  \vspace{1.5cm}
+  \item \textbf{Are those assumptions believable?}
+  \vspace{1.5cm}
+  \item \textbf{Design used} (IV / DiD / matching / event study / other):
+  \vspace{0.5cm}
+  \item \textbf{Most obvious threats to identification:}
+  \vspace{1.5cm}
+  \item \textbf{Alternative explanations that generate same findings:}
+  \vspace{1.5cm}
+\end{itemize}
+
+\subsection{Interpretation \& Robustness}
+\begin{itemize}[leftmargin=*, nosep]
+  \item \textbf{Are coefficients economically meaningful / interpretable?}
+  \vspace{1.5cm}
+  \item \textbf{Does the draft overclaim causality?} \quad Yes \quad / \quad No
+  \vspace{0.5cm}
+  \item \textbf{Robustness checks done (and whether sufficient):}
+  \vspace{1.5cm}
+  \item \textbf{Missing robustness checks / falsification tests:}
+  \vspace{1.5cm}
+  \item \textbf{Alternative mechanisms the author ignores:}
+  \vspace{1.5cm}
+\end{itemize}
+
+% ============================================================
+\section{4. Theory / Conceptual Framework}
+
+\begin{itemize}[leftmargin=*, nosep]
+  \item \textbf{Does the model capture the real question?}
+  \vspace{1.5cm}
+  \item \textbf{Too complicated for the insight delivered?} \quad Yes \quad / \quad No
+  \vspace{0.5cm}
+  \item \textbf{Are assumptions economically meaningful or arbitrary?}
+  \vspace{1.5cm}
+  \item \textbf{Are mechanisms clearly explained?}
+  \vspace{1.5cm}
+  \item \textbf{Clear, testable implications generated?}
+  \vspace{1.5cm}
+  \item \textbf{Connection to reality / institutional detail / evidence:}
+  \vspace{1.5cm}
+  \item \textbf{Missing predictions or extensions:}
+  \vspace{1.5cm}
+\end{itemize}
+
+% ============================================================
+\section{5. Writing \& Presentation}
+
+\begin{itemize}[leftmargin=*, nosep]
+  \item \textbf{Is the writing clear and logically organized?}
+  \vspace{1.5cm}
+  \item \textbf{Where does the argument become confusing / vague / repetitive?}
+  \vspace{1.5cm}
+  \item \textbf{Assumptions vs.\ evidence vs.\ interpretation: clearly distinguished?}
+  \vspace{1.5cm}
+  \item \textbf{Notation / terminology inconsistencies:}
+  \vspace{1.5cm}
+  \item \textbf{Does the paper acknowledge limitations honestly?}
+  \vspace{1.5cm}
+  \item \textbf{Sections to cut, rewrite, or reorganize:}
+  \vspace{1.5cm}
+\end{itemize}
+
+% ============================================================
+\section*{B. Major Strengths}
+\begin{enumerate}[leftmargin=*, nosep]
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+\end{enumerate}
+
+\section*{C. Major Weaknesses}
+\begin{enumerate}[leftmargin=*, nosep]
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+\end{enumerate}
+
+\section*{D. Obvious ``Stupid Mistakes'' or Red Flags}
+\begin{enumerate}[leftmargin=*, nosep]
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+\end{enumerate}
+
+\section*{E. Top 5 Concrete Revisions}
+\begin{enumerate}[leftmargin=*, nosep]
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+  \item \vspace{1.2cm}
+\end{enumerate}
+
+% ============================================================
+\section*{Personal Notes \& Follow-Up}
+
+\begin{notebox}
+% Questions, related papers to read, ideas triggered by this paper, etc.
+\vspace{4cm}
+\end{notebox}
+
+\end{document}
