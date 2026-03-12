@@ -1,5 +1,11 @@
 # macOS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
 
 # LaTeX build artifacts
 *.aux
@@ -10,8 +16,42 @@
 *.log
 *.out
 *.synctex.gz
+*.synctex(busy)
 *.toc
 *.lof
 *.lot
 *.nav
 *.snm
+*.vrb
+*.dvi
+*.xdv
+*.bcf
+*.run.xml
+*.idx
+*.ilg
+*.ind
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.lol
+*.maf
+*.mtc
+*.mtc0
+*.ptc
+_minted-*/
+
+# Editor junk
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Compiled PDFs (keep source, not output)
+# Uncomment if you want to exclude generated PDFs:
+# *.pdf
