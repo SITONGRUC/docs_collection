@@ -1,25 +1,29 @@
 \renewcommand\cellalign{t}
 \begin{threeparttable}
-\begin{tabular}{lcc}
+\begin{tabular}{lc}
 \toprule
- & log_counts \\
+ & \multicolumn{1}{c}{$\log(1+\text{Counts}_{\text{DEM}})$} \\
+\cmidrule(lr){2-2}
  & (1) \\
 \midrule
 \addlinespace
-visit_ticket & \makecell{0.225*** \\ (0.066)} \\
-opp_visit & \makecell{-0.101 \\ (0.098)} \\
+Visit (DEM Ticket) & \makecell{0.225*** \\ (0.066)} \\
+Visit (GOP Ticket) & \makecell{$-$0.101 \\ (0.098)} \\
 \midrule
 \addlinespace
-date_str & x \\
-countycode & x \\
+Date FE   & $\checkmark$ \\
+County FE & $\checkmark$ \\
 \midrule
 \addlinespace
-Observations & 33306 \\
-S.E. type & hetero \\
-$R^2$ & 0.721 \\
+Observations & 33,306 \\
+S.E. type    & Heteroskedasticity-robust \\
+$R^2$        & 0.721 \\
 $R^2$ Within & 0.000 \\
 \bottomrule
 \end{tabular}
-\footnotesize Significance levels: $*$ p $<$ 0.05, $**$ p $<$ 0.01, $***$ p $<$ 0.001. Format of coefficient cell: Coefficient 
- (Std. Error)
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes}: $*$ $p<0.05$, $**$ $p<0.01$, $***$ $p<0.001$.
+      Standard errors in parentheses.
+\end{tablenotes}
 \end{threeparttable}
