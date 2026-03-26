@@ -36,3 +36,5 @@ When the user provides a job description (pasted text, file, or URL content), do
 - Never invent experience or skills not present in `meta_resume.tex`
 - Keep all dates, institutions, and titles accurate
 - Preserve the LaTeX structure and formatting exactly
+
+keep the new resume for this position to 。/resumes foloder
