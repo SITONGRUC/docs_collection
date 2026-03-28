@@ -1,0 +1,210 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{geometry}
+\input{glyphtounicode}
+
+%----------PAGE GEOMETRY----------
+\geometry{letterpaper, left=0.55in, right=0.55in, top=0.5in, bottom=0.55in, footskip=5pt}
+
+%----------ACCENT COLOR----------
+\definecolor{accent}{RGB}{26, 60, 110}   % deep academic navy
+
+%----------PAGE STYLE----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%----------SECTION FORMATTING----------
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\color{accent}
+}{}{0em}{}[\color{accent}\titlerule\vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%----------CUSTOM COMMANDS----------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%===========================================
+%           RESUME STARTS HERE
+%===========================================
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+  {\Huge\textbf{\scshape Sitong Li}} \\[5pt]
+  \small Minneapolis, MN
+  \;$\cdot$\;
+  +1\,(952)\,201-4026
+  \;$\cdot$\;
+  \href{mailto:ruc.sitongli@gmail.com}{ruc.sitongli@gmail.com} \\[4pt]
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {University of Minnesota, Carlson School of Management}{Minneapolis, MN}
+    {M.S.\ in Finance \& Business Analytics \normalfont{--- GPA: 3.97\,/\,4.00}}{Jun 2023 -- Aug 2025}
+    \resumeItemListStart
+      \resumeItem{Honors: Carlson Scholar (highest academic award), Merit-Based Scholarship}
+      \resumeItem{Relevant Coursework: Predictive Analytics, Causal Inference, Big Data Analytics, Financial Econometrics, Biostatistics}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Renmin University of China, School of Business}{Beijing, China}
+    {B.B.A.\ in Accounting}{Sep 2019 -- Jun 2023}
+
+\resumeSubHeadingListEnd
+
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience}
+
+\resumeSubHeadingListStart
+
+  %--- Cassidy / Olin ---
+  \resumeSubheading
+    {Olin School of Business, Washington University in St.\ Louis}{}
+    {Research Assistant to Prof.\ William Cassidy \normalfont{(Empirical Macro-Finance)}}{Nov 2024 -- Present}
+    \resumeItemListStart
+      \resumeItem{Led abstract and manuscript preparation summarizing econometric analyses linking macroeconomic outcomes to fiscal policy rhetoric across congressional sessions}
+      \resumeItem{Constructed and parameterized an MNIR-inspired computational model (Gentzkow, Shapiro \& Taddy, \textit{Econometrica}, 2019) using word embeddings to quantify ideological divergence; validated outputs against published benchmarks}
+      \resumeItem{Applied GPT-4 to synthesize fiscal policy indicators from 100,000+ lines of congressional testimony, converting unstructured text into structured model input parameters}
+      \resumeItem{Scraped and merged member demographics, chamber majority composition, and session metadata into a curated, analysis-ready panel dataset}
+      \resumeItem{Employed BERT-based entity resolution to link speaker identities to party affiliation and measure partisan sentiment across testimonies}
+      \resumeItem{Digitized 1950s-era congressional hearing transcripts from scanned PDFs into structured text using the multimodal LLM Donut}
+      \resumeItem{Conducted regression analyses linking macroeconomic outcomes to partisan rhetoric patterns using panel data econometric methods}
+    \resumeItemListEnd
+
+  %--- Zhang / Climate Risk ---
+  \resumeSubheading
+    {Carlson School of Management, University of Minnesota}{}
+    {Research Assistant to Prof.\ Haiwen (Helen) Zhang \normalfont{(Climate Risk Disclosure)}}{Nov 2023 -- Aug 2025}
+    \resumeItemListStart
+      \resumeItem{Designed and curated a large-scale population-level dataset from 10,000+ SEC 10-K filings; implemented data validation and quality control procedures for analysis-ready outputs}
+      \resumeItem{Applied BERT and rule-based classifiers to detect and quantify climate risk disclosures across 500,000+ sentences; converted model outputs into structured research parameters}
+      \resumeItem{Validated findings through panel regressions and event study models estimated in Stata; measured systemic risk exposure using metrics from Campbell et al.\ (2014)}
+      \resumeItem{Analyzed fair value disclosures in bank 10-Ks using GPT-4 applied to segmented text chunks}
+    \resumeItemListEnd
+
+  %--- Zhang / EPA enforcement ---
+  \resumeSubheading
+    {Carlson School of Management, University of Minnesota}{}
+    {Research Assistant to Prof.\ Haiwen (Helen) Zhang \normalfont{(Environmental Enforcement)}}{Mar 2025 -- Aug 2025}
+    \resumeItemListStart
+      \resumeItem{Curated and maintained large survey-based regulatory datasets; performed data quality validation on 100,000+ emails across 1,000+ entities}
+      \resumeItem{Matched regulatory email inquiries with EPA enforcement records; ran probit regressions to examine enforcement determinants and synthesized results for manuscript preparation}
+      \resumeItem{Built a GPT-4-powered search bot integrated with the Google Search API to retrieve and assemble entity-specific contextual data for population-level analysis}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------INDUSTRY EXPERIENCE-----------
+\section{Industry Experience}
+
+\resumeSubHeadingListStart
+
+  %--- Ross / Michigan ---
+  \resumeSubheading
+    {Ross School of Business, University of Michigan}{Ann Arbor, MI}
+    {Research Data Analyst}{Nov 2025 -- Present}
+    \resumeItemListStart
+      \resumeItem{Implemented data validation and quality control procedures; delivered cleaned, analysis-ready datasets and automated reporting outputs to support cross-functional stakeholder decision-making}
+      \resumeItem{Built a scalable entity resolution pipeline integrating LLMs, fuzzy string matching, and word embeddings to curate and link records across large heterogeneous administrative datasets}
+      \resumeItem{Designed and deployed a computer vision pipeline to infer demographic attributes from applicant photos, enabling structured population-level analysis}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Harvest Fund Management Co., Ltd.}{Beijing, China}
+    {Fixed-Income Research Intern}{Dec 2022 -- May 2023}
+    \resumeItemListStart
+      \resumeItem{Parameterized interest rate risk (duration) models for 30,000+ fixed-income funds using Ridge regression, Lasso, and convex optimization; validated outputs against empirical benchmarks}
+      \resumeItem{Built an attention-based pricing model achieving 80\,bps accuracy improvement; applied Campisi decomposition for performance attribution across 30,000+ holdings}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {China International Capital Corporation (CICC)}{Beijing, China}
+    {Quantitative Research Intern}{Jul 2022 -- Dec 2022}
+    \resumeItemListStart
+      \resumeItem{Analyzed 3,000+ mutual funds using Fama-French factor models with rolling time series estimation; synthesized findings for cross-functional strategy recommendations}
+      \resumeItem{Applied difference-in-differences to quantify causal impact of employee stock ownership plans on stock prices; designed strategy achieving 2\% abnormal return}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Harvest Fund Management Co., Ltd.}{Beijing, China}
+    {Quantitative Research Intern}{Jan 2022 -- Jul 2022}
+    \resumeItemListStart
+      \resumeItem{Estimated high-frequency risk exposures of 300+ thematic/index funds; identified predictive macroeconomic price factors via XGBoost}
+      \resumeItem{Managed large-scale underlying data via SQL databases; designed EV sector scoring strategy}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Programming}{: Python, R, Stata, SQL, MATLAB, C++, Java, OCaml} \\
+    \textbf{Tools \& Platforms}{: Git, \LaTeX, Unix/Bash, Vim, Databricks, Spark, AWS, SAS, Slurm (HPC), HTML} \\
+    \textbf{Languages}{: English (Fluent), Mandarin (Native)}
+  }}
+\end{itemize}
+
+\end{document}
