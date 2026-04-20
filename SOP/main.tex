@@ -3,9 +3,7 @@
 \geometry{letterpaper, margin=1in}
 \usepackage{hyperref}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{natbib}
 \usepackage{microtype}
-\bibliographystyle{apalike}
 
 \definecolor{accent}{RGB}{26, 60, 110}   % matches resume navy
 
@@ -31,107 +29,76 @@
 
 \vspace{1em}
 
-% ============================================================
-% FILL IN: e.g., \noindent Dear Professor [Name],
-% ============================================================
-\noindent Dear Hiring Committee,
+\noindent Dear Professor Dube,
 
 \vspace{1em}
 
-I am applying for the predoctoral fellowship and am
-strongly committed to pursuing a Ph.D.\ in Economics.  My primary
-research interests lie in political economy---in both democratic and
-non-democratic settings.  In democracies, I want to understand how
-political dynamics, including election cycles and populist rhetoric,
-shape regulatory behavior, media incentives, and firms' decisions,
-with downstream effects on fiscal policy and economic outcomes.  Prior
-work, including \cite{kempf2021partisan} and \cite{fos2022political},
-documents how polarization is reshaping financial markets, and
-\cite{cassidy2025partisan} shows that firms adjust their public
-communication in response.  Given the broader rise of populism across
-democratic countries, I see this as a timely and consequential
-research agenda.
+I am writing to apply for the Research Professional position at the Becker Friedman
+Institute for Economics. My long-term goal is to pursue a Ph.D.\ in economics, and
+your research program---on how political and social forces shape conflict, gender
+inequality, and development---is precisely where I want to deepen as an empirical
+researcher.
 
-I am equally interested in non-democratic settings.  In authoritarian
-regimes such as contemporary China, I want to study how information
-control---censorship and propaganda---distorts the information
-environment for markets and intermediaries, with consequences for
-firms, investors, and ordinary citizens.  \cite{lorentzen2014china}
-documents the strategic logic behind censorship in China, and
-\cite{chen2019impact} shows that it can suppress information-seeking.
-Building on these insights, I am interested in how censorship shapes
-investment behavior and capital allocation.
+Your work speaks to questions I find deeply compelling. The Nigeria field experiment,
+studying how contact between warring groups affects farmer-herder violence, is a
+striking example of applying a randomized design to a problem where causal
+identification is both genuinely difficult and genuinely consequential: standard
+observational approaches cannot disentangle whether dialogue reduces violence or
+whether peaceful communities are simply more willing to engage. I am excited by the
+prospect of contributing to the data pipeline and analysis for this project, whether
+in cleaning and validating the experimental data, building outcome measures from
+administrative or satellite sources, or implementing the core estimators. The
+media-and-gender-norms project draws me in for different reasons. Measuring how
+exposure to Western media reshapes attitudes in an Islamic society requires both
+creative big-data construction and careful causal identification---exactly the
+intersection of skills I have been developing. I am drawn to your use of novel data
+sources to study deeply rooted disparities that are resistant to easy measurement,
+and I would welcome the opportunity to contribute to any stage of that project.
 
-My interest in non-democratic political economy is partly personal.  I
-grew up in China, where politics is not something you observe from a
-distance---it is something you live with every day.  When I began my
-career doing fixed-income research at Harvest Fund, I assumed that
-rigorous quantitative analysis would be sufficient.  But while working
-on municipal bonds, I found that no purely technical model can
-substitute for understanding local fiscal capacity, officials' policy
-priorities, or the credibility of implicit government guarantees.
-Bond prices in China depend heavily on the commitments of local
-officials; when an official is removed or investigated under an
-anti-corruption campaign, policy can shift and the economic
-environment can change overnight.  This information is often censored
-or strategically withheld, yet it is decisive for pricing.  That
-experience was the origin of my interest in non-democratic
-institutions and the economics of information control.
+My path to development economics and political economy runs through two distinct
+experiences. Before coming to the United States, I worked as a fixed-income analyst
+at Harvest Fund Management, one of China's largest asset managers, covering local
+government bonds. That work forced me to think concretely about how political
+institutions and fiscal constraints translate into real outcomes for ordinary
+people---whether roads get built, whether public services are delivered, and
+ultimately how resource allocation under different governance structures shapes
+development. The connection between political economy and human welfare is not
+abstract to me; I spent years watching it play out in bond prices and infrastructure
+investment data. At the same time, I became fascinated by the measurement
+challenges involved: how do you identify the causal effect of a governance reform
+when political change is never random? That question led me toward empirical
+economics, and toward programs like yours that take identification seriously.
 
-After coming to the United States and receiving research training with
-Professors Cassidy and Zhang, I found that the same themes arise even
-in democratic settings.  From Prof.\ Cassidy's project, I learned how
-congressional committee dynamics shape public discourse on fiscal
-policy and how legislators bring political pressure to bear on federal
-agencies.  From Prof.\ Zhang's projects, I explored how the EPA
-responds to congressional information requests and how firms' climate
-risk disclosures vary with regulatory and political pressure.  These
-experiences deepened my conviction that understanding political
-institutions is essential for empirical work in finance and
-economics---which is why I am applying for this predoc.
+Since arriving in the United States three years ago, I have built a broad empirical
+toolkit. I am proficient in Python and have constructed reproducible pipelines for
+processing large, heterogeneous datasets---including administrative records,
+geospatial data, and text corpora. I have hands-on experience implementing
+difference-in-differences and event-study designs, including stacked-cohort
+specifications, pre-trend diagnostics, and sensitivity analyses. I also have
+substantial experience with large language models and modern NLP methods. I
+understand that extracting structured information from news archives, social media,
+and survey instruments is increasingly central to research in conflict and media
+studies, and I have developed workflows---with careful attention to robustness and
+reproducibility---for doing so at scale. I am comfortable with Python and R, and I
+am actively developing proficiency in Stata. I also have experience with geospatial
+analysis, which I understand is relevant to the Nigeria project's geographic scope.
 
-My research training has also given me broad methodological experience.
-I have worked with both classical NLP approaches---bag-of-words
-models, named-entity recognition, and rule-based classifiers---and
-modern text-as-data methods in political economy, including MNIR
-\citep{taddy2013multinomial} as applied in
-\cite{gentzkow2019measuring}, BERT-based classifiers, and LLM-based
-extraction workflows.  I care as much about measurement quality as I
-do about statistical power: with the rise of LLMs, extracting
-constructs from text has become easier, but measurement error can
-also grow if workflows are not transparent or reproducible.  I pay
-careful attention to practical steps that improve robustness---
-controlling temperature, using cross-validation, and checking results
-against alternative NLP specifications.  I read widely in the
-textual-analysis literature and have discussed methods directly with
-authors to understand not only how they manage measurement error, but
-also how they communicate those choices to editors and discussants.
-For instance, I suggested that our team follow \cite{hampole2025artificial}
-and run a local LLM as a robustness check for our GPT-4-extracted
-measures.
+As a Research Professional, I would contribute in three concrete ways. First, I can
+build and maintain scalable, reproducible pipelines for the large administrative,
+survey, and media datasets both projects require. Second, I can implement and extend
+the causal identification strategies at the core of this work---RCT analysis,
+difference-in-differences, and related approaches---and write clean code that
+collaborators across institutions can audit and build on. Third, I can deploy
+computational text and media methods to extract information from news sources,
+survey instruments, and online data at scale. I am strongly committed to working for
+the full two-year term and am available to begin July 1, 2026.
 
-As a predoctoral researcher, I aim to contribute in three concrete
-ways.  First, I can build and maintain scalable, reproducible data
-pipelines for large datasets.  Second, I can develop measurement
-strategies for narratives and information environments using NLP and
-LLMs, with close attention to robustness and interpretability.  Third,
-I can support credible empirical designs---clean panel construction,
-event-study and difference-in-differences frameworks, and
-replication-ready code.
-
-I would be grateful for the opportunity to work with your group and to
-deepen my training in economics research.  I am confident that my
-background---combining firsthand experience with non-democratic
-institutions, substantive interest in censorship and information
-economics, and strong technical skills in data and text
-analysis---would allow me to contribute meaningfully to your research
-agenda.
+I am grateful for your consideration and would welcome the chance to discuss how my
+background fits your current projects.
 
 \vspace{1em}
 
 \noindent Sincerely,\\[0.5em]
 \textbf{Sitong Li}
-
-\bibliography{refs}
 
 \end{document}
