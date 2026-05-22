@@ -38,5 +38,8 @@ When the user provides a job description (pasted text, file, or URL content), do
 - Never invent experience or skills not present in `resume/resume_template_with_michigan.tex`
 - Keep all dates, institutions, and titles accurate
 - Preserve the LaTeX structure and formatting exactly
+- **Location**: Always use **Ann Arbor, MI** (not Minneapolis, MN) as the header location in every tailored resume
+- **Michigan role title**: Always present the Michigan role under "Professional Experience" (not "Predoctoral Experience") and remove the Principal Investigators line. Set the title to match the target job — use the closest fit from the JD (e.g., Data Engineer → "Data Engineer", Business Analyst → "Data Analyst", Program Manager / research role → "Research Analyst"). Default to "Data Analyst" only if no better match exists.
 
-keep the new resume for this position to 。/resumes foloder
+- Save tailored **resumes** to `resume/resumes/`
+- Save tailored **cover letters** to `cover_letters/`

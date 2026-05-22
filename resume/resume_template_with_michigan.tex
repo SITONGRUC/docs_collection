@@ -85,9 +85,9 @@
 %----------HEADER----------
 \begin{center}
   {\Huge\textbf{\scshape Sitong Li}} \\[5pt]
-  \small Minneapolis, MN
+  \small Ann Arbor, MI
   \;$\cdot$\;
-  +1\,(952)\,201-4026
+  9522014026
   \;$\cdot$\;
   \href{mailto:ruc.sitongli@gmail.com}{ruc.sitongli@gmail.com} \\[4pt]
 \end{center}
@@ -113,6 +113,24 @@
 \resumeSubHeadingListEnd
 
 
+%-----------PREDOCTORAL EXPERIENCE-----------
+\section{Predoctoral Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Ross School of Business, University of Michigan}{Ann Arbor, MI}
+    {Full-Time Predoctoral Research Fellow}{Nov 2025 -- Present}
+    \resumeItemListStart
+      \resumeItem{\textit{Principal Investigators}: Menaka Hampole (Yale), Ashley Wong (Barnard), Francesca Truffa (Michigan)}
+      \resumeItem{Built a scalable entity resolution pipeline integrating LLMs, FuzzyWuzzy string matching, and word embeddings to accurately link student application records across heterogeneous administrative datasets}
+      \resumeItem{Designed and deployed a computer vision pipeline to infer demographic attributes from applicant photos, enabling structured, large-scale population analysis}
+      \resumeItem{Delivered cleaned, analysis-ready datasets and automated reporting outputs to support cross-functional research and stakeholder decision-making}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
 %-----------RESEARCH EXPERIENCE-----------
 \section{Research Experience}
 
@@ -121,33 +139,40 @@
   %--- Cassidy / Olin ---
   \resumeSubheading
     {Olin School of Business, Washington University in St.\ Louis}{}
-    {Research Assistant to Prof.\ William Cassidy \normalfont{(Political Discourse \& Computational Text Analysis)}}{Nov 2024 -- Present}
+    {Research Assistant to Prof.\ William Cassidy \normalfont{(Empirical Macro-Finance)}}{Nov 2024 -- Nov 2025}
     \resumeItemListStart
-      \resumeItem{Analyzed natural language datasets of 100,000+ lines of congressional testimony to study political identity processes, partisan group dynamics, and ideological divergence across party lines}
-      \resumeItem{Developed and maintained end-to-end text analysis pipelines: digitized scanned PDFs using multimodal LLM Donut, classified topics and extracted fiscal policy indicators with GPT-4, and resolved speaker identities via BERT-based entity resolution}
-      \resumeItem{Built an MNIR-inspired model (Gentzkow, Shapiro \& Taddy, \textit{Econometrica}, 2019) using word embeddings to quantify partisan sentiment and measure rhetorical divergence across congressional sessions}
-      \resumeItem{Scraped and merged large-scale demographic and metadata datasets (House/Senate members, party affiliation, session composition) into analysis-ready panels using Python}
-      \resumeItem{Conducted regression analyses linking macroeconomic outcomes to patterns in political discourse; computed cross-sectional dispersion in sentiment by speaker role and party}
+      \resumeItem{Digitized 1950s-era congressional hearing transcripts from scanned PDFs into structured text using the multimodal LLM Donut}
+      \resumeItem{Applied GPT-4 to classify topics and extract fiscal policy indicators (fiscal actions, policy styles) from 100,000+ lines of congressional testimony}
+      \resumeItem{Employed BERT-based entity resolution to link speaker identities to party affiliation and measure partisan sentiment in testimonies}
+      \resumeItem{Built an MNIR-inspired model (Gentzkow, Shapiro \& Taddy, \textit{Econometrica}, 2019) using word embeddings to quantify ideological divergence across party lines}
+      \resumeItem{Scraped and merged member demographics (House/Senate), chamber majority composition, and session metadata into an analysis-ready panel}
+      \resumeItem{Computed cross-sectional dispersion in sentiment by speaker role and party affiliation across congressional sessions}
+      \resumeItem{Conducted regression analyses linking macroeconomic outcomes to partisan rhetoric patterns in fiscal policy hearings}
     \resumeItemListEnd
 
   %--- Zhang / EPA enforcement ---
   \resumeSubheading
     {Carlson School of Management, University of Minnesota}{}
-    {Research Assistant to Prof.\ Haiwen (Helen) Zhang \normalfont{(Regulatory Text Analysis)}}{Mar 2025 -- Aug 2025}
+    {Research Assistant to Prof.\ Haiwen (Helen) Zhang \normalfont{(Environmental Enforcement)}}{Mar 2025 -- Aug 2025}
     \resumeItemListStart
-      \resumeItem{Collected and processed large-scale natural language datasets: converted 10 years of scanned regulatory emails into structured text using OCR and regular expressions}
-      \resumeItem{Developed text analysis pipelines using GPT-4 to extract key topics and inquiry points from 100,000+ emails across 1,000+ entities; built a search bot integrated with the Google Search API for entity-specific retrieval}
-      \resumeItem{Applied generative models for named-entity extraction; matched processed email data with EPA enforcement records and ran probit regressions to examine enforcement determinants}
+      \resumeItem{Converted 10 years of scanned regulatory emails to structured text using OCR and regular expressions}
+      \resumeItem{Applied GPT-4 to extract key topics and inquiry points from 100,000+ emails across 1,000+ entities}
+      \resumeItem{Built a GPT-4-powered search bot integrated with the Google Search API to retrieve entity-specific contextual information}
+      \resumeItem{Used generative models to identify whether inquiries targeted public firms and extracted corresponding company names}
+      \resumeItem{Matched email inquiries with EPA enforcement records; ran probit regressions to examine enforcement determinants}
     \resumeItemListEnd
 
   %--- Zhang / 10-K Climate Risk ---
   \resumeSubheading
     {Carlson School of Management, University of Minnesota}{}
-    {Research Assistant to Prof.\ Haiwen (Helen) Zhang \normalfont{(Large-Scale Text \& Disclosure Analysis)}}{Nov 2023 -- Aug 2025}
+    {Research Assistant to Prof.\ Haiwen (Helen) Zhang \normalfont{(Climate Risk Disclosure)}}{Nov 2023 -- Aug 2025}
     \resumeItemListStart
-      \resumeItem{Built a web crawler to collect and parse 10,000+ full-text 10-K filings from SEC EDGAR; segmented documents into structured sections using regex and HTML parsing for item-level analysis}
-      \resumeItem{Developed NLP pipelines applying BERT and rule-based classifiers to detect and quantify disclosures across 500,000+ sentences; analyzed fair value disclosures with GPT-4 on segmented text chunks}
-      \resumeItem{Validated findings through panel regressions and event study models estimated in Stata; measured textual readability and risk exposure using established metrics}
+      \resumeItem{Built a web crawler to collect and parse 10,000+ full-text 10-K filings from SEC EDGAR for large-scale disclosure analysis}
+      \resumeItem{Segmented filings into structured sections (Item~1A, Item~7, etc.)\ using regex and HTML parsing for item-level analysis}
+      \resumeItem{Applied BERT and rule-based classifiers to detect and quantify climate risk disclosures across 500,000+ sentences}
+      \resumeItem{Measured textual readability and systemic risk exposure using metrics from Campbell et al.\ (2014)}
+      \resumeItem{Validated findings through panel regressions and event study models estimated in Stata}
+      \resumeItem{Analyzed fair value disclosures in bank 10-Ks using GPT-4 applied to segmented text chunks}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -207,13 +232,13 @@
 %-----------REFERENCES-----------
 \section{References}
 \begin{tabularx}{\textwidth}{@{}X X X@{}}
-  \textbf{Haiwen (Helen) Zhang} & \textbf{William M.\ Cassidy} & \textbf{Richard T.\ Thakor} \\
-  Professor of Accounting & Assistant Professor of Finance & Associate Professor of Finance \\
-  University of Minnesota & Washington University in St.\ Louis & University of Minnesota \\
-  \href{mailto:zhan0400@umn.edu}{\texttt{zhan0400@umn.edu}} &
+  \textbf{Francesca Truffa} & \textbf{William M.\ Cassidy} & \textbf{Haiwen (Helen) Zhang} \\
+  Assistant Professor Economics & Assistant Professor of Finance & Professor of Accounting \\
+  University of Michigan & Washington University in St.\ Louis & University of Minnesota \\
+  \href{mailto:ftruffa@umich.edu }{\texttt{ftruffa@umich.edu}} &
   \href{mailto:cassidyw@wustl.edu}{\texttt{cassidyw@wustl.edu}} &
-  \href{mailto:rthakor@umn.edu}{\texttt{rthakor@umn.edu}} \\
-  +1\,(612)\,624-9818 & +1\,(225)\,368-7616 & +1\,(612)\,626-7817 \\
+  \href{mailto:zhan0400@umn.edu}{\texttt{zhan0400@umn.edu}} \\
+  & +1\,(225)\,368-7616 & +1\,(612)\,624-9818 \\
 \end{tabularx}
 
 \end{document}
