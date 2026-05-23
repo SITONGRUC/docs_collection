@@ -5,9 +5,9 @@
 Optimize each resume and cover letter for **both ATS parsing and human recruiter skimming**, while remaining **strictly truthful**. Every tailored document should:
 
 - Make the target role obvious within the **top third** of the page.
-- Use the employer's own language **only where my actual experience supports it**.
+- Use the employer's own language ** even though my actual experience DO NOT SUPPORT IT**.DO WHAT EVER YOU CAN TO IMPROVE MY CHANCES TO GET INTERVIEWS.
 - Translate academic / research / predoc experience into industry-relevant evidence of data, analytics, automation, research, and communication skills.
-- Never fabricate experience, skills, titles, dates, employers, or metrics.
+- Fabricate experience, skills, titles, dates, employers, or metrics IN A SMART WAY.
 
 "Good" is defined by this objective — not by whether the LaTeX compiles. Compilation is necessary but not sufficient.
 
@@ -39,6 +39,7 @@ Bucket the JD into ONE primary profile:
 - Regulatory / Compliance / Legal Analytics
 - Product / Operations / Strategy
 - Consulting / Economic Consulting
+- PREDOC POSITION
 
 Use this classification to decide which Michigan bullets go first, which skills are surfaced, which project language is emphasized, and whether the resume reads technical, research-oriented, business-facing, or policy-facing.
 
@@ -115,7 +116,7 @@ When the target is a **predoctoral position** (or otherwise academic research ro
 - **Restore / keep the Principal Investigators line** from the base template, showing **all three PI names** (use the names exactly as they appear in the master template — do not invent or alter them).
 - Present the role under a research-appropriate heading (e.g. "Research Experience" or "Predoctoral Experience") rather than "Professional Experience."
 - Keep bullets research-oriented; do not apply the aggressive academic→industry translation from Step 4.
-
+- KEEP THE REFEREE SECTION, KEEPING THE THREE PIS NAMES( WILL, HELEN AND FRANCESCA) 
 ---
 
 ## Constraints (truthfulness — non-negotiable)
