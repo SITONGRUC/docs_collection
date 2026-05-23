@@ -68,8 +68,9 @@ Do **not** repeat resume bullets. The cover letter should:
 Confirm all of the following:
 
 - [ ] Header location is **Ann Arbor, MI**.
+- [ ] Three-section structure applied: Michigan is in its own "Full-Time Experience" (or "Full-Time Predoctoral Fellowship") section — never merged into Research Experience.
 - [ ] Michigan role rules applied correctly (see below) for the role type.
-- [ ] One page unless explicitly instructed otherwise; 3–6 bullets per role (more for recent, fewer for older).
+- [ ] Rank all content by relevance to the JD. Put the most important evidence on page 1. A second page is acceptable if the additional content meaningfully strengthens the application — never cut high-relevance bullets just to save space. 3–6 bullets per role (more for recent, fewer for older).
 - [ ] No invented skills, degrees, titles, dates, employers, or metrics.
 - [ ] Top ~5 JD keywords appear truthfully.
 - [ ] Most relevant Michigan bullets appear first.
@@ -98,12 +99,28 @@ Return:
 
 ---
 
+## Resume Section Structure (always apply)
+
+The resume is divided into **three named experience sections** to make the Michigan full-time role immediately legible to HR screeners and distinguish it from unpaid RA work.
+
+| Section | Industry label | Predoc label | What belongs here |
+|---|---|---|---|
+| 1 | **Full-Time Experience** | **Full-Time Predoctoral Fellowship** | Michigan only |
+| 2 | **Research Experience** | **Research Experience** | WashU, Clarkson, and any other unpaid / part-time RA roles |
+| 3 | **Internship Experience** | **Internship Experience** | All internships |
+
+- **Never merge Michigan into "Research Experience"** — its own section is the signal that it is paid and full-time, not another unpaid RA stint.
+- For predoc applications, rename section 1 to **"Full-Time Predoctoral Fellowship"** to resonate with the target audience.
+- Section order is always 1 → 2 → 3 (most senior first within each section).
+
+---
+
 ## Michigan Role Rules (conditional on role type)
 
 The Michigan role is presented differently depending on the target.
 
 ### A. Industry / non-academic roles (default)
-- Present the Michigan role under **"Professional Experience"** (not "Predoctoral Experience").
+- Present the Michigan role under **"Full-Time Experience"** (its own section — see section structure above).
 - **Remove** the Principal Investigators line.
 - Use an **honest functional title** that reflects the actual work and the target role — e.g. Data Analyst, Research Analyst, Quantitative Research Analyst, Data Science Research Analyst, NLP / Text Analytics Research Analyst, Data Engineering Research Analyst.
 - Match the JD title only when the bullet content genuinely supports it. **Do not** title yourself "Data Engineer" (or any formal industry level) unless the bullets clearly show that work. If the JD title is far from the actual work, use the closest truthful functional title rather than copying the JD title verbatim.
@@ -112,11 +129,11 @@ The Michigan role is presented differently depending on the target.
 ### B. Predoc / academic research fellowship roles
 When the target is a **predoctoral position** (or otherwise academic research role classified as "Research Analyst / Predoc / Policy Research"):
 
+- Present the Michigan role under **"Full-Time Predoctoral Fellowship"** (its own section — see section structure above).
 - Set the Michigan role title to **"Predoctoral Fellowship."**
 - **Restore / keep the Principal Investigators line** from the base template, showing **all three PI names** (use the names exactly as they appear in the master template — do not invent or alter them).
-- Present the role under a research-appropriate heading (e.g. "Research Experience" or "Predoctoral Experience") rather than "Professional Experience."
 - Keep bullets research-oriented; do not apply the aggressive academic→industry translation from Step 4.
-- KEEP THE REFEREE SECTION, KEEPING THE THREE PIS NAMES( WILL, HELEN AND FRANCESCA) 
+- KEEP THE REFEREE SECTION, KEEPING THE THREE PIS NAMES (WILL, HELEN AND FRANCESCA)
 ---
 
 ## Constraints (truthfulness — non-negotiable)

@@ -55,3 +55,7 @@ _minted-*/
 # Compiled PDFs (keep source, not output)
 # Uncomment if you want to exclude generated PDFs:
 # *.pdf
+
+# Submitted resumes and cover letters (local collection only)
+resume/resumes/
+cover_letters/
