@@ -22,6 +22,9 @@ Maximize the candidate's chances of getting interviews by producing a resume and
 - **Cover letter:** `SOP/cover_letter_with_michigan.tex` — source for all tailored cover letters.
 - Only use a different template if the user explicitly specifies one.
 - Always `Read` the template first to confirm structure before editing.
+- **NEVER modify the template files directly.** Always create a new file for each position using the file naming convention below, and write the tailored content there. The templates are read-only master sources.
+- Save new resume files to `resume/resumes/`.
+- Save new cover letter files to `cover_letters/`.
 
 ---
 
