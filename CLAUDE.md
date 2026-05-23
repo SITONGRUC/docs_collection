@@ -29,7 +29,15 @@ When the user provides a job description (pasted text, file, or URL content), do
    - Use snake_case, no spaces, no special characters
    - Example: `Goldman_Sachs_Data_Analyst_cover_letter.tex`, `Microsoft_Quant_Researcher_resume.tex`
 
-4. **Report back** — briefly summarize:
+4. **Compile the file** — after saving, always run `pdflatex` automatically to produce a PDF:
+   ```
+   cd resume/resumes && pdflatex {filename}.tex
+   ```
+   - For cover letters: `cd cover_letters && pdflatex {filename}.tex`
+   - Run `pdflatex` twice if needed to resolve cross-references
+   - Report whether compilation succeeded or failed
+
+5. **Report back** — briefly summarize:
    - Which keywords were added and where
    - Any bullets that were reordered or rewritten
    - Anything in the JD that could not be matched to existing experience
