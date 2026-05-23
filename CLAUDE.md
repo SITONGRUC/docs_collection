@@ -106,7 +106,7 @@ The resume is divided into **three named experience sections** to make the Michi
 | Section | Industry label | Predoc label | What belongs here |
 |---|---|---|---|
 | 1 | **Full-Time Experience** | **Full-Time Predoctoral Fellowship** | Michigan only |
-| 2 | **Research Experience** | **Research Experience** | WashU, Clarkson, and any other unpaid / part-time RA roles |
+| 2 | **Research Experience** | **Research Experience** | WashU, Carlson, and any other unpaid / part-time RA roles |
 | 3 | **Internship Experience** | **Internship Experience** | All internships |
 
 - **Never merge Michigan into "Research Experience"** — its own section is the signal that it is paid and full-time, not another unpaid RA stint.
