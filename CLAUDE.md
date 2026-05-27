@@ -18,7 +18,7 @@ Maximize the candidate's chances of getting interviews by producing a resume and
 
 ## Base Templates
 
-- **Resume:** `resume/resume_template_with_michigan.tex` — source for all tailored resumes.
+- **Resume:** `resume/resume_for_work.tex` — source for all tailored resumes.
 - **Cover letter:** `SOP/cover_letter_with_michigan.tex` — source for all tailored cover letters.
 - Only use a different template if the user explicitly specifies one.
 - Always `Read` the template first to confirm structure before editing.
