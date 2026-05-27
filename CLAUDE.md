@@ -94,7 +94,7 @@ Check against the template selected in Stage 2 (`resume_for_predoc.tex` or `resu
 === STAGE 3: KEYWORD EVIDENCE MAP ===
 | JD Keyword | In Master Resume? | Best Evidence | Placement | Action |
 |---|---|---|---|---|
-| ... | Yes / Partial / No | ... | Skills / Michigan / WashU / Carlson / Project / Cover letter | Use as-is / Reframe / Add plausibly / Skip |
+| ... | Yes / Partial / No | ... | Skills / Michigan / WashU / Project (Rule A only) / Cover letter | Use as-is / Reframe / Add plausibly / Skip |
 ```
 
 **Action definitions:**
@@ -117,7 +117,7 @@ Save the tailored version to `resume/resumes/{Company}_{JobTitle}_resume.tex`.
 #### Michigan Role — apply EXACTLY ONE rule based on Stage 2
 
 **RULE A (Industry — all non-predoc roles):**
-- Section heading: `Full-Time Experience` (its own section, never merged with Research Experience).
+- Section heading: `Full-Time Experience` (its own section, never merged with Research Assistant Experience).
 - Job title: choose the most aggressive plausible title the bullets support (e.g., Data Analyst, NLP Research Analyst, Quantitative Research Analyst, Data Engineering Research Analyst). Copy the JD title only if bullets clearly support it.
 - REMOVE the Principal Investigators line.
 - Do NOT include a Referees section.
@@ -170,6 +170,13 @@ Never merge sections. Never reorder sections within a rule.
 Save to `cover_letters/{Company}_{JobTitle}_cover_letter.tex`.
 Source template: `SOP/cover_letter_with_michigan.tex`.
 
+**Replace all hardcoded content from the template — nothing carries over as-is:**
+- **Date:** update to today's date in "Month DD, YYYY" format.
+- **Salutation:** replace with the correct hiring contact or committee for this role.
+- **Full body:** rewrite entirely for this JD. Do not carry over any USC/Schaeffer-specific sentences.
+- **Header city:** must read `Ann Arbor, MI` — never Minneapolis or any other city.
+
+**Content rules:**
 - Do NOT repeat resume bullets verbatim.
 - Open: state the role and why this company or problem fits the background.
 - Body: connect 2–3 experiences to the JD's core needs using JD language.
@@ -183,9 +190,10 @@ Source template: `SOP/cover_letter_with_michigan.tex`.
 Run these commands:
 
 ```bash
+mkdir -p resume/resumes cover_letters
 cd resume/resumes && pdflatex {filename}.tex && pdflatex {filename}.tex
-cd cover_letters && pdflatex {filename}.tex && pdflatex {filename}.tex
-pdftotext resume/resumes/{filename}.pdf - | head -60
+cd ../../cover_letters && pdflatex {filename}.tex && pdflatex {filename}.tex
+pdftotext ../resume/resumes/{filename}.pdf - | head -60
 ```
 
 - Run `pdflatex` twice to resolve cross-references.
