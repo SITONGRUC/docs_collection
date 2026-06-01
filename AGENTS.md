@@ -84,6 +84,28 @@ Michigan Rule derivation:
 
 ---
 
+### VISA / WORK AUTHORIZATION GATE (check BEFORE Stage 3)
+
+After Stage 2 classification, scan the JD for language indicating the employer will **not** sponsor visas or will **not** consider candidates without existing work authorization. Common phrases:
+
+- "unable to provide visa sponsorship"
+- "no visa sponsorship available"
+- "must be authorized to work in the United States"
+- "no work permit sponsorship"
+- "will not sponsor employment visas"
+- "must have permanent work authorization"
+
+**If Michigan Rule = A (Industry) AND the JD contains such language:**
+- **STOP immediately.** Do NOT proceed to Stage 3.
+- Tell the user: "This is a Plan A (industry) role and the JD states they will not consider candidates without work authorization / will not sponsor visas. I'm not generating materials for this position."
+- Do NOT generate any .tex files, do NOT run compilation.
+
+**If Michigan Rule = B (Predoc) AND the JD contains such language:**
+- Proceed normally. Predoc/RA positions at academic institutions often list this boilerplate but still hire international candidates on OPT/STEM-OPT.
+- Mention the visa note to the user in the Stage 7 report as a flag, but generate materials as usual.
+
+---
+
 ### STAGE 3 — Keyword Evidence Map
 
 For each of the top 8 keywords from Stage 1, fill this table:
