@@ -1,5 +1,17 @@
 # Resume & Cover Letter Tailoring Instructions
 
+## Context (read first)
+
+The candidate begins a fully-funded Ph.D. in Accounting at UT Dallas (Naveen Jindal School of Management) in Aug 2026. The goal is **not** an academic professorship — the program's recent placement record is weak (as of April, only 3 of 8 graduates found academic jobs, and only 1 of those landed an R1 role). The candidate is targeting an **industry job after finishing the Ph.D.** and wants to start interning as early and as often as possible along the way.
+
+UT Dallas does not allow first-year Ph.D. students to intern in the USA, so **Year 1 (2026–2027) internship search is focused on China and Hong Kong.** From Year 2 onward, US internships become allowed and the search should widen accordingly — check with the user before assuming location targeting has changed.
+
+There is only **one track now: industry.** The previous predoc/academic-fellowship track (Rule B) is retired — do not classify any role as PREDOC POSITION and do not tailor materials in an academic/research-fellowship style. Every application goes through the industry framing described below.
+
+**Status note:** on 2026-07-31 the prior master resume/cover-letter templates (Michigan-predoc era) were archived to `archive/resume/` and `archive/SOP/`. The repo now keeps only two working folders, `resume/` and `cover_letters/` — everything else (old academic materials, writing sample, job market paper, read list, transcript, code sample) lives in `archive/`. The new master resume lives at `resume/resume_for_work.tex` (rebuilt from `archive/resume/resume_for_work.tex`, updated with Dallas, TX header and the UT Dallas Ph.D. added to Education) and the new cover letter template lives at `cover_letters/cover_letter_template.tex` (placeholders only — no reusable body content carries over from the old Michigan-era letter). The pipeline is ready to run: JD in → tailored resume + cover letter out.
+
+---
+
 ## Primary Objective
 
 Maximize the candidate's chances of getting interviews by producing a resume and cover letter that:
@@ -10,9 +22,8 @@ Maximize the candidate's chances of getting interviews by producing a resume and
 
 **Embellishment policy — read carefully:**
 - **FROZEN (never change):** dates, employer names, institution names, degree titles.
-- **MAXIMIZE AGGRESSIVELY (all roles):** skill descriptions, project scope, impact framing, metrics, tool proficiency, and any claim that is not easily externally verified. Add plausible skills, metrics, and impact claims consistent with the type of work in the master resume, even if not explicitly stated there.
-- **Industry roles (Rule A):** also translate to industry language and aggressively reframe the functional job title using JD terminology.
-- **Predoc roles (Rule B):** embellish scope/metrics/skills aggressively, but do NOT translate to industry language — keep framing academic and research-oriented. Do not reframe the job title beyond `Predoctoral Fellowship`.
+- **MAXIMIZE AGGRESSIVELY:** skill descriptions, project scope, impact framing, metrics, tool proficiency, and any claim that is not easily externally verified. Add plausible skills, metrics, and impact claims consistent with the type of work in the master resume, even if not explicitly stated there.
+- Translate academic/research language into industry language and aggressively reframe the functional job title using JD terminology.
 
 "Good" means the candidate looks like the strongest possible match for this specific role. Compilation is necessary but not sufficient.
 
@@ -20,10 +31,8 @@ Maximize the candidate's chances of getting interviews by producing a resume and
 
 ## Base Templates
 
-- **Resume (predoc positions):** `resume/resume_for_predoc.tex` — use when Stage 2 classification = PREDOC POSITION.
-- **Resume (all other roles):** `resume/resume_for_work.tex` — use for all non-predoc positions.
-- **Cover letter:** `SOP/cover_letter_with_michigan.tex` — source for all tailored cover letters.
-- Select the resume template based on Stage 2 classification; do not override unless the user explicitly specifies one.
+- **Resume:** `resume/resume_for_work.tex` — the single master template for all roles. (Prior master: `archive/resume/meta_resume.tex` / `archive/resume/resume_for_work.tex` — useful as source material while rebuilding.)
+- **Cover letter:** `cover_letters/cover_letter_template.tex`. (Prior template: `archive/SOP/cover_letter_with_michigan.tex`.)
 - Always `Read` the template first to confirm structure before editing.
 - **NEVER modify the template files directly.** Always create a new file for each position using the file naming convention below, and write the tailored content there. The templates are read-only master sources.
 - Save new resume files to `resume/resumes/`.
@@ -45,6 +54,7 @@ Print this block immediately after receiving a JD, before anything else:
 === STAGE 1: JD PARSE ===
 COMPANY:
 JD TITLE:
+LOCATION: (flag if outside China/Hong Kong for a Year-1 internship search)
 TOP 8 KEYWORDS:
 KEY ACTION VERBS:
 CORE RESPONSIBILITIES: (3-5 bullets)
@@ -56,18 +66,17 @@ EMPHASIZED QUALIFICATIONS:
 
 ### STAGE 2 — Classify the Role
 
-Choose ONE classification and state rationale. Then derive the Michigan Rule.
+Choose ONE classification and state rationale.
 
 | Classification | Typical signals |
 |---|---|
 | Data Analyst / Business Analyst | SQL, dashboards, BI tools, stakeholder reporting |
-| Research Analyst / Policy Research | academic research, policy, causal inference, working papers — but NOT a named fellowship or RA-for-faculty role |
+| Research Analyst / Policy Research | academic research, policy, causal inference, working papers |
 | Data Engineer / Analytics Engineer | pipelines, ETL, dbt, Spark, data infrastructure |
 | Quantitative Research / Finance | quant, trading, risk, factor models, PnL |
 | Regulatory / Compliance / Legal Analytics | SEC, CFPB, compliance, legal data, regulatory filings |
 | Product / Operations / Strategy | product metrics, A/B testing, OKRs, operational efficiency |
 | Consulting / Economic Consulting | client deliverables, economic analysis, litigation support |
-| PREDOC POSITION | explicitly named predoctoral fellowship, full-time RA for faculty, academic research fellowship — use this only when the role is a structured pre-PhD position, not a general research analyst role |
 
 Print this block:
 
@@ -75,26 +84,19 @@ Print this block:
 === STAGE 2: CLASSIFICATION ===
 ROLE CLASSIFICATION:
 RATIONALE: (1-2 sentences)
-MICHIGAN RULE: [A — Industry] OR [B — Predoc]
 ```
-
-Michigan Rule derivation:
-- If classification = **PREDOC POSITION** → Rule B.
-- All other classifications → Rule A.
 
 ---
 
 ### STAGE 3 — Keyword Evidence Map
 
-For each of the top 8 keywords from Stage 1, fill this table:
-
-Check against the template selected in Stage 2 (`resume_for_predoc.tex` or `resume_for_work.tex`).
+For each of the top 8 keywords from Stage 1, fill this table against `resume/resume_for_work.tex`:
 
 ```
 === STAGE 3: KEYWORD EVIDENCE MAP ===
 | JD Keyword | In Master Resume? | Best Evidence | Placement | Action |
 |---|---|---|---|---|
-| ... | Yes / Partial / No | ... | Skills / Michigan / WashU / Project (Rule A only) / Cover letter | Use as-is / Reframe / Add plausibly / Skip |
+| ... | Yes / Partial / No | ... | Skills / Full-Time Experience / Project / Research Assistant / Cover letter | Use as-is / Reframe / Add plausibly / Skip |
 ```
 
 **Action definitions:**
@@ -111,46 +113,27 @@ Check against the template selected in Stage 2 (`resume_for_predoc.tex` or `resu
 
 ### STAGE 4 — Tailor the Resume
 
-Read the master resume: `resume/resume_for_predoc.tex` if Stage 2 = PREDOC POSITION, otherwise `resume/resume_for_work.tex`.
+Read the master resume: `resume/resume_for_work.tex`.
 Save the tailored version to `resume/resumes/{Company}_{JobTitle}_resume.tex`.
 
-#### Michigan Role — apply EXACTLY ONE rule based on Stage 2
-
-**RULE A (Industry — all non-predoc roles):**
+**Rules:**
 - Section heading: `Full-Time Experience` (its own section, never merged with Research Assistant Experience).
 - Job title: choose the most aggressive plausible title the bullets support (e.g., Data Analyst, NLP Research Analyst, Quantitative Research Analyst, Data Engineering Research Analyst). Copy the JD title only if bullets clearly support it.
-- REMOVE the Principal Investigators line.
-- Do NOT include a Referees section.
+- No Principal Investigators line, no References/Referees section.
 
-**RULE B (Predoc — PREDOC POSITION only):**
-- Section heading: `Full-Time Predoctoral Fellowship` (its own section).
-- Job title: `Predoctoral Fellowship`.
-- KEEP the Principal Investigators line — exact names from master template: Menaka Hampole (Yale), Ashley Wong (Barnard), Francesca Truffa (Michigan). Do not alter or invent names.
-- OMIT the Carlson Data Scientist entry entirely.
-- KEEP the References section with the three referees exactly as in the master template (Francesca Truffa, William M. Cassidy, Haiwen Zhang). Do not alter names or contact details.
-- Keep bullets research-oriented; do not apply academic→industry translation. Academic citations in bullets are appropriate and should be kept.
-- Do NOT include an Internship Experience section.
-
-#### Section order — Rule A (industry):
+#### Section order:
 1. Education
-2. Full-Time Experience — Michigan only
-3. Project \& Internship Experience — Carlson Analytics Lab projects + all internships
-4. Research Assistant Experience — Will Cassidy (WashU) only; 3 strongest bullets; Helen Zhang entries omitted
+2. Full-Time Experience
+3. Project \& Internship Experience — analytics/research lab projects + all internships
+4. Research Assistant Experience — strongest bullets only
 5. Skills
 
-#### Section order — Rule B (predoc):
-1. Education
-2. Full-Time Predoctoral Fellowship — Michigan only (PI line included; Carlson Data Scientist omitted)
-3. Research Assistant Experience — all three RA roles (Cassidy/WashU, Zhang/EPA, Zhang/10-K); keep academic language and citations intact
-4. References
-5. Skills
+Never merge sections. Never reorder sections.
 
-Never merge sections. Never reorder sections within a rule.
-
-#### Bullet and content rules (all roles):
+#### Bullet and content rules:
 - Reorder bullets within each role — strongest JD match first.
 - Top 2–3 JD-matched bullets and skills must appear on page 1.
-- For Rule A roles: translate academic language to industry terms:
+- Translate academic language to industry terms:
   - "RA work" → "data pipeline and statistical analysis"
   - "text-as-data" → whatever term the JD uses (NLP, text analytics, LLM pipeline, information extraction)
   - "research project" → "data analysis project" or "analytics workflow"
@@ -160,7 +143,7 @@ Never merge sections. Never reorder sections within a rule.
 - Add metrics and impact framing from Stage 3 "Add plausibly" items to relevant bullets.
 - Every bullet starts with a strong action verb. No bullet begins with "Responsible for" or "Helped."
 - No action verb repeated more than twice within a single role.
-- Header location: **Ann Arbor, MI** — never Minneapolis, MN or any other city.
+- Header location: confirm current city with the user if unsure (candidate is transitioning from Ann Arbor, MI to UT Dallas, TX as of Aug 2026) — never leave a stale city on the resume.
 - Preserve LaTeX structure and formatting exactly; do not change section commands, fonts, or spacing macros.
 
 ---
@@ -168,13 +151,13 @@ Never merge sections. Never reorder sections within a rule.
 ### STAGE 5 — Tailor the Cover Letter
 
 Save to `cover_letters/{Company}_{JobTitle}_cover_letter.tex`.
-Source template: `SOP/cover_letter_with_michigan.tex`.
+Source template: `cover_letters/cover_letter_template.tex`.
 
 **Replace all hardcoded content from the template — nothing carries over as-is:**
 - **Date:** update to today's date in "Month DD, YYYY" format.
 - **Salutation:** replace with the correct hiring contact or committee for this role.
-- **Full body:** rewrite entirely for this JD. Do not carry over any USC/Schaeffer-specific sentences.
-- **Header city:** must read `Ann Arbor, MI` — never Minneapolis or any other city.
+- **Full body:** rewrite entirely for this JD.
+- **Header city:** confirm current city with the user if unsure — never leave a stale city on the letter.
 
 **Content rules:**
 - Do NOT repeat resume bullets verbatim.
@@ -224,7 +207,7 @@ APPLICATION ANGLE: (one sentence)
 ## ATS Safety Rules
 
 - Single-column layout for body content — no tables, text boxes, or multi-column blocks in experience or skills.
-- Standard section headings: `Full-Time Experience` (Rule A), `Full-Time Predoctoral Fellowship` (Rule B), `Project \& Internship Experience` (Rule A), `Research Assistant Experience` (both rules), `References` (Rule B only), `Education`, `Skills`. All variants are ATS-safe.
+- Standard section headings: `Full-Time Experience`, `Project \& Internship Experience`, `Research Assistant Experience`, `Education`, `Skills`. All ATS-safe.
 - Never place keywords only in the header or footer.
 - Spell out acronyms on first use: "natural language processing (NLP)".
 - Full "Month Year" date formats (e.g., "January 2022 – Present").
@@ -236,6 +219,6 @@ APPLICATION ANGLE: (one sentence)
 Pattern: `{Company}_{JobTitle}_{type}.tex`
 - `{type}` is exactly `resume` or `cover_letter`.
 - snake_case, no spaces, no special characters.
-- Examples: `Goldman_Sachs_Data_Analyst_resume.tex`, `NBER_Predoctoral_Fellow_cover_letter.tex`.
+- Examples: `Goldman_Sachs_Data_Analyst_resume.tex`, `CICC_Quant_Research_Intern_cover_letter.tex`.
 - Resumes → `resume/resumes/`
 - Cover letters → `cover_letters/`

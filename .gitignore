@@ -58,4 +58,7 @@ _minted-*/
 
 # Submitted resumes and cover letters (local collection only)
 resume/resumes/
-cover_letters/
+cover_letters/*
+!cover_letters/cover_letter_template.tex
+archive/resume/resumes/
+archive/cover_letters/
